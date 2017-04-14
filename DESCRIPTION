@@ -1,4 +1,4 @@
-Package: tarballr
+Package: tarballutil
 Type: Package
 Title: Helpful R Functions for Psych Research (utilities)
 Version: 0.1.0
