@@ -1,0 +1,18 @@
+Package: tarballr
+Type: Package
+Title: Helpful R Functions for Psych Research (utilities)
+Version: 0.1.0
+Authors@R: person("Travis", "Carter", email = "travis.carter@gmail.com",
+                  role = c("aut", "cre"))
+Description: Provides helpful utility functions and wrappers for typical
+    workflows of psychological researchers (i.e. Travis J. Carter & collaborators)
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Depends:
+    R (>= 3.3.1)
+Imports:
+    broom,
+    scales,
+    tidyverse
+RoxygenNote: 5.0.1
