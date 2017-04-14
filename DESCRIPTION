@@ -16,3 +16,5 @@ Imports:
     scales,
     tidyverse
 RoxygenNote: 5.0.1
+URL: http://github.com/tarball11/tarballutil
+BugReports: http://github.com/tarball11/tarballutil/issues
