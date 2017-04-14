@@ -1,3 +1,24 @@
+# Standardizes names associated with standard summaries
+fix_tbl_names<- function(Mod.tbl) {
+	new.names = old.names = names(Mod.tbl)
+	names.lst = list('Estimate' = c('estimate', 'fit', 'lsmean'),
+									 'SE' = c('Std. Error', 'std.error'),
+									 'DF' = c('Df', 'df'),
+									 'SumSq' = c('Sum Sq', 'sumsq'),
+									 'MeanSq' = c('Mean Sq', 'meansq'),
+									 'F.value' = c('F value'),
+									 't.value' = c('t value', 't.ratio'),
+									 'z.value' = c('z value'),
+									 'p.value' = c('Pr(>F)', 'Pr(>|t|)', 'Pr(>z)'),
+									 'CI.lo' = c('lower.CL', 'lwr', 'conf.low'),
+									 'CI.hi' = c('upper.CL', 'upr', 'conf.high'))
+
+	for(new in names(names.lst)) new.names[which(old.names %in% names.lst[[new]])] = new
+	names(Mod.tbl) = new.names
+	return(Mod.tbl)
+}
+
+add_SE_cols<- function(.) dplyr::mutate(., SE.lo = Estimate - SE, SE.hi = Estimate + SE)
 
 # Returns a summary of the variables
 describe_tbl<- function(Data.tbl, ..., key = 'key', conf.level = 0.95) {
